@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>My First Dashboard</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
+        </li>
+      </ul>
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">...</div>
+        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
+        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
+      </div>
+<div class="container">
+    <h1>Yelp Dashboard</h1>
+    <p>By Eugene and Veronica and Corgi Intern</p>
+    <div class="row">
+       
+        
+        <div class="col-xs-3">
+            <label> Choose the location....</label>
+            <select class="form-control" id ='first_cat'>
+                <option value="Daly City">Daly City</option>
+                <option value="Milbrae">Milbrae</option>
+                <option value="San Bruno">San Bruno</option>
+                <option value="San Francisco">San Francisco</option>
+                <option value="South San Francisco">South San Francisco</option>
+            </select>
+        </div>
+        <div class="col-md-12">
+            <div class="chart" id="bargraph">
+                <script>
+                    var graphs = {{plot | safe}};
+                    Plotly.plot('bargraph',graphs,{});
+                </script>
+            </div>
+        </div>
+    </div>
+</div>
+<div>
+    
+    <div class="container">
+        <h1>Maps: </h1>
+        <div class="row">
+            <div class="card" style="width: 18rem;">
+                <img src="{{ url_for('static', filename='images/DalyCity.png')}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                <h5 class="card-title">Daly City</h5>
+                <p class="card-text">Yelp Daly City Map</p>
+                <a href="/dalycity" class="btn btn-primary">Go to map</a>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img src="{{ url_for('static', filename='images/Millbrae.png')}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                <h5 class="card-title">Millbrae</h5>
+                <p class="card-text">Yelp Millbrae Map</p>
+                <a href="/millbrae" class="btn btn-primary">Go to map</a>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img src="{{ url_for('static', filename='images/SanBruno.png')}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                <h5 class="card-title">San Bruno</h5>
+                <p class="card-text">Yelp San Bruno Map</p>
+                <a href="/sanbruno" class="btn btn-primary">Go to map</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="card" style="width: 18rem;">
+                <img src="{{ url_for('static', filename='images/SF_Yelp.png')}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                <h5 class="card-title">SF </h5>
+                <p class="card-text">Yelp SF Map</p>
+                <a href="/sf" class="btn btn-primary">Go to map</a>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img src="{{ url_for('static', filename='images/SouthSF.png')}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                <h5 class="card-title">South SF</h5>
+                <p class="card-text">Yelp South SF Map</p>
+                <a href="/southsf" class="btn btn-primary">Go to map</a>
+                </div>
+            </div>
+        </div>
+       
+       
+    
+       
+    </div>
+</div>
+<script src="{{ url_for('static', filename='js/jquery-1.11.1.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/plots.js') }}"></script>
+</body>
+</html>
