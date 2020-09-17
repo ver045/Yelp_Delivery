@@ -1,8 +1,8 @@
 # Yelp_Delivery
 
-Looked into data about what restaurants on Yelp are still open during COVID.
+Looked into data on what restaurants on Yelp are still open during the pandemic.
 Chose four cities within our radius: San Francisco, Daly City, South City, and Millbrae.
-Created interactive dashboard that shows restaurants open for delivery in which user can filter by price range, location, and food category.
+Created an interactive dashboard that shows restaurants open for delivery in which the user can filter by price range, location, and food category.
 
 # Technologies used
 * Jupyter notebook
